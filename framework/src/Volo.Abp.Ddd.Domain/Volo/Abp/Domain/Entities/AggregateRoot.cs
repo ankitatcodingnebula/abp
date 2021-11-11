@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 using Volo.Abp.Auditing;
 using Volo.Abp.Data;
 using Volo.Abp.ObjectExtending;
@@ -12,6 +13,7 @@ namespace Volo.Abp.Domain.Entities
         IHasExtraProperties,
         IHasConcurrencyStamp
     {
+        [JsonExtensionData]
         public virtual ExtraPropertyDictionary ExtraProperties { get; protected set; }
 
         [DisableAuditing]
